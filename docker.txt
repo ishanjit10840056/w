@@ -1,0 +1,32 @@
+
+yum install docker\* -y 
+
+systemctl start docker
+
+systemctl enable docker
+
+docker pull ubuntu:rolling
+
+
+for expose it on port 8080
+docker run -it --name mydevops -p 8080:80 ubuntu:rolling /bin/bash
+
+cat /etc/os-release
+
+_not required_
+If you get logged out of docker image then
+docker exec -it <container_name_or_id> /bin/bash
+
+apt update -y
+
+apt install apache2 -y
+
+apt install curl
+
+cd /var/www/html
+
+cat > index.html
+
+service apache2 restart
+
+then copy public ip of instance:8080
