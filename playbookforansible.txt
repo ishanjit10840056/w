@@ -1,0 +1,21 @@
+---
+- name: configure a apache server
+  hosts: all
+  tasks:
+
+        - name: install apache on my remote servers
+          yum:
+                name: httpd
+                state: present
+
+        - name: start apache service
+          service:
+                  name: httpd
+                  state: started
+                  enabled: true
+        - name: creating an index.html file
+          copy:
+            content: "This is my index file"
+            dest: /var/www/html/index.html
+
+~       
